@@ -1,0 +1,102 @@
+//CREATE USER 
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "fulan1",
+    "email": "fulan1231@gmail.com",
+    "password": "12345678121",
+    "confPassword": "12345678121",
+    "role": "user"
+}
+
+
+###
+// GET USER
+GET http://localhost:5000/users
+
+###
+//GET USER BY ID
+GET http://localhost:5000/users/1bd0a79a-a393-4a36-a558-01f1c1914238
+
+###
+//UPDATE DATA USER BY ID
+PATCH http://localhost:5000/users/e023db59-adf6-4ff2-9a11-2bb6a5f6b808
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEiLCJpYXQiOjE2OTc5NzcyNTEsImV4cCI6MTcyOTUxMzI1MX0.5P1o6SDeXtNoLSuj49CmLrmnrw4ih96iL6tIMz9gSb4
+Content-Type: application/json
+
+{
+    "name": "afahrizal",
+    "email": "afahrizal123@gmail.com",
+    "password": "123456781",
+    "confPassword": "123456781",
+    "role":"user"
+}
+
+###
+//DELETE USER BY ID
+DELETE http://localhost:5000/users/2e0b8656-922d-4658-b129-4437d272df2e
+
+
+###
+//LOGIN USER ADMIN
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"afahrizal@gmail.com",
+    "password":"1234567812"
+}
+
+###
+//LOGIN USER BIASA
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"afahrizal123@gmail.com",
+    "password":"123456781"
+}
+
+###
+//CEK LOGIN USER
+GET http://localhost:5000/me
+
+###
+//LOGOUT
+DELETE http://localhost:5000/logout
+
+
+//CREATE PRODUCT
+###
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name":"Iphone 15",
+    "price":"50000"
+}
+
+###
+//GET ALL PRODUCT
+GET http://localhost:5000/products
+# Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEiLCJpYXQiOjE2OTc5NzcyNTEsImV4cCI6MTcyOTUxMzI1MX0.5P1o6SDeXtNoLSuj49CmLrmnrw4ih96iL6tIMz9gSb4
+
+###
+//GET SINGLE PRODUCT BY ID
+GET http://localhost:5000/products/e5cf4b79-8107-401e-abaa-43c6438f293f
+###
+
+###
+//UPDATE PRODUCT
+PATCH http://localhost:5000/products/bf507b56-8ae6-4d8d-a3ee-623e34bcae35
+Content-Type: application/json
+
+{
+    "name":"Samsung Galaxy A52s",
+    "price":"8000"
+}
+
+###
+//DELETE PRODUCT
+DELETE  http://localhost:5000/products/bf507b56-8ae6-4d8d-a3ee-623e34bcae35
